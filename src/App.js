@@ -2,6 +2,7 @@ import "./App.css";
 import React, { useState } from "react";
 import background from "./images/background.jpg";
 import { PopMenu } from "./components/PopMenu";
+import { Header } from "./components/Header";
 import { initializeApp } from "firebase/app";
 import { query, collection, getFirestore, getDocs } from "firebase/firestore";
 
@@ -47,6 +48,7 @@ function App() {
 
   return (
     <div>
+      <Header />
       <img
         src={background}
         alt="background-img"

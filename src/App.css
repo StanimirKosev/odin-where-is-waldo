@@ -43,23 +43,20 @@ img {
   background-color: hsla(0, 0%, 100%, 0.8);
   border-radius: 7px;
   pointer-events: all;
-}
 
-ul {
-  height: inherit;
   display: grid;
   grid-template-rows: repeat(3, 1fr);
   list-style-type: none;
 }
 
-li {
+.target {
   padding: 10px;
   border-radius: 7px;
   transition: all 0.3s ease;
   font-size: 18px;
 }
 
-li:hover {
+.target:hover {
   background-color: white;
   font-size: 20px;
 }

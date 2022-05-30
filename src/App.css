@@ -115,6 +115,9 @@ img {
 
 .timer {
   grid-area: 1/ 2 / 3 / 3;
+  display: flex;
+  align-items: center;
+  font-size: 35px;
 }
 
 .image-container {
@@ -159,4 +162,15 @@ img {
     rgba(171, 33, 199, 0.8) 35%,
     rgba(41, 19, 46, 0) 65%
   );
+}
+
+.welcome-menu {
+  width: 200px;
+  height: 200px;
+  background-color: red;
+  z-index: 10;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }

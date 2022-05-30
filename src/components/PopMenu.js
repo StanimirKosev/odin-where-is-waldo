@@ -1,25 +1,38 @@
 import React from "react";
 
-export const PopMenu = ({ position, checkCharGuess }) => {
+export const PopMenu = ({
+  position,
+  getCharGuess,
+  mortyFound,
+  waldoFound,
+  tomFound,
+}) => {
   return (
     <div className="wrapper-pop-menu" style={position}>
       <div className="target-box">
         <div className="dropdown-menu">
           <div
-            id={"morty"}
+            data-char={"morty"}
             className="target"
-            onClick={(e) => checkCharGuess(e)}
+            id={mortyFound}
+            onClick={(e) => getCharGuess(e)}
           >
             Morty
           </div>
           <div
-            id={"waldo"}
+            data-char={"waldo"}
             className="target"
-            onClick={(e) => checkCharGuess(e)}
+            id={waldoFound}
+            onClick={(e) => getCharGuess(e)}
           >
             Waldo
           </div>
-          <div id={"tom"} className="target" onClick={(e) => checkCharGuess(e)}>
+          <div
+            data-char={"tom"}
+            className="target"
+            id={tomFound}
+            onClick={(e) => getCharGuess(e)}
+          >
             Tom
           </div>
         </div>

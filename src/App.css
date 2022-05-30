@@ -15,6 +15,7 @@ body {
   width: 100%;
   background-color: black;
   font-family: "Cyber", sans-serif;
+  color: #ccff00;
 }
 
 img {
@@ -37,12 +38,7 @@ img {
   height: 90px;
   border: 5px dashed #ccff00;
   border-radius: 50%;
-  background: rgb(50, 20, 80);
-  background: radial-gradient(
-    circle,
-    rgba(50, 20, 80, 0.3) 25%,
-    rgba(41, 19, 46, 0.3) 75%
-  );
+  background-color: rgba(75, 39, 110, 0.3);
   position: relative;
 }
 
@@ -52,19 +48,21 @@ img {
   right: -75px;
   width: 90px;
   height: 137px;
-  background: rgb(50, 20, 80);
+  border-radius: 7px;
+  pointer-events: all;
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  border: 1px solid #ccff00;
+}
+
+.dropdown-menu,
+.header {
+  background: rgb(50, 20, 80, 0.8);
   background: radial-gradient(
     circle,
     rgba(50, 20, 80, 0.8) 25%,
     rgba(41, 19, 46, 0.8) 75%
   );
-  border-radius: 7px;
-  pointer-events: all;
-  display: grid;
-  grid-template-rows: repeat(3, 1fr);
-  list-style-type: none;
-  color: #ccff00;
-  border: 1px solid #ccff00;
 }
 
 .target {
@@ -75,11 +73,11 @@ img {
 }
 
 .target:hover {
-  background: rgb(50, 20, 80);
+  background: rgb(115, 60, 170);
   background: radial-gradient(
     circle,
-    rgb(115, 60, 170) 25%,
-    rgb(142, 57, 161) 75%
+    rgb(115, 60, 170) 20%,
+    rgb(142, 57, 161) 80%
   );
   font-size: 22px;
 }
@@ -88,16 +86,9 @@ img {
   position: fixed;
   top: 0;
   width: 100%;
-  height: 70px;
-  background: rgb(50, 20, 80);
-  background: radial-gradient(
-    circle,
-    rgba(50, 20, 80, 0.7) 25%,
-    rgba(41, 19, 46, 0.7) 75%
-  );
+  height: 90px;
   z-index: 10;
-  font-size: 23px;
-  color: #ccff00;
+  font-size: 27px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, 1fr);
@@ -130,12 +121,42 @@ img {
   grid-area: 1/ 3 / 3 / 4;
   display: flex;
   justify-content: space-evenly;
-  align-items: center;
 }
 
-.header-img {
+.container-char {
+  display: grid;
+  grid-template-rows: 1fr 0.1fr;
+  align-items: end;
+  justify-items: center;
+  transition: all 0.3s ease-in-out;
+  border-radius: 12px;
+}
+
+#char-found {
+  filter: grayscale(100%);
+  text-decoration: line-through 2px;
+}
+
+.char-img {
   width: 60px;
   height: 60px;
-  border-radius: 50%;
   object-fit: cover;
+}
+
+.tom-img {
+  object-fit: fill;
+}
+
+.char-title {
+  font-size: 18px;
+}
+
+.container-char:hover {
+  transform: translate(0, 35px) scale(2);
+  background: rgba(171, 33, 199, 0.692);
+  background: linear-gradient(
+    0deg,
+    rgba(171, 33, 199, 0.8) 35%,
+    rgba(41, 19, 46, 0) 65%
+  );
 }

@@ -55,6 +55,8 @@ img {
   border: 1px solid #ccff00;
 }
 
+.end-game-menu,
+.welcome-menu,
 .dropdown-menu,
 .header {
   background: rgb(50, 20, 80, 0.8);
@@ -105,6 +107,7 @@ img {
 .title-one {
   display: grid;
   align-content: end;
+  justify-items: center;
 }
 
 .title-two {
@@ -164,13 +167,124 @@ img {
   );
 }
 
+.overlay-endgame,
+.overlay {
+  position: fixed;
+  transition: 200ms ease-in-out;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgb(0, 0, 0, 0.9);
+  background: linear-gradient(
+    195deg,
+    rgba(0, 0, 0, 1) 35%,
+    rgba(0, 0, 0, 0.9) 60%
+  );
+}
+
+.overlay-endgame {
+  background: rgb(0, 0, 0, 0.7);
+}
+
+.end-game-menu,
 .welcome-menu {
-  width: 200px;
-  height: 200px;
-  background-color: red;
-  z-index: 10;
+  width: 50vw;
+  height: 80vh;
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  border-radius: 12px;
+  display: flex;
+}
+
+img[alt*="welcome-img"] {
+  width: 60%;
+  border-radius: 12px 0 0 12px;
+  object-fit: cover;
+}
+
+.welcome-menu-content {
+  width: 40%;
+  padding: 10px;
+  display: grid;
+  grid-template-rows: repeat(5, 1fr);
+  justify-items: center;
+  gap: 30px 0;
+  position: relative;
+}
+
+img[alt*="welcome-char"] {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+
+.char-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  transition: all 0.3s ease;
+}
+
+.char-container:hover {
+  transform: scale(1.2);
+}
+
+.game-over-btn,
+.welcome-btn {
+  border-radius: 12px;
+  width: 100px;
+  height: 45px;
+  padding: 5px;
+  transition: all 0.3s ease;
+  font-family: "Cyber", sans-serif;
+  font-size: inherit;
+  color: #ccff00;
+  background-color: #310e68;
+  background-image: linear-gradient(316deg, #310e68 0%, #5f0f40 74%);
+  border: 1px solid #ccff00;
+}
+
+.game-over-btn:hover,
+.welcome-btn:hover {
+  transform: scale(1.2);
+  background-color: #a4508b;
+  background-image: linear-gradient(326deg, #a4508b 0%, #5f0a87 74%);
+}
+
+.end-game-menu {
+  width: 35vw;
+  height: 45vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+
+.game-over-btn {
+  width: 150px;
+}
+
+.credits {
+  position: absolute;
+  padding: 10px;
+  bottom: 10px;
+  left: -335px;
+  font-size: 18px;
+  background-color: rgba(0, 0, 0, 0.9);
+  color: #ccff00;
+  border: 1px solid rgba(0, 0, 0, 0.9);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.credits:hover {
+  transform: scale(1.1);
+  background-color: rgba(0, 0, 0, 1);
+}
+
+a {
+  color: #ccff00;
 }

@@ -7,28 +7,28 @@ import { GameOver } from "./GameOver";
 
 export const Header = ({ mortyFound, waldoFound, tomFound }) => {
   const [time, setTime] = useState(0);
-  const [gameStart, setGameStart] = useState(false);
+  const [toggleStopwatch, setToggleStopwatch] = useState(false);
   const [showWelcomeMenu, setShowWelcomeMenu] = useState(true);
 
   useEffect(() => {
     let interval;
-    if (gameStart) {
+    if (toggleStopwatch) {
       interval = setInterval(() => {
         setTime((prevTime) => prevTime + 10);
       }, 10);
-    } else if (!gameStart) {
+    } else if (!toggleStopwatch) {
       clearInterval(interval);
     }
     return () => clearInterval(interval);
-  }, [gameStart]);
+  }, [toggleStopwatch]);
 
   const whenGameStart = () => {
     setShowWelcomeMenu(!showWelcomeMenu);
-    setGameStart(!gameStart);
+    setToggleStopwatch(!toggleStopwatch);
   };
 
   const whenGameStops = () => {
-    setGameStart(!gameStart);
+    setToggleStopwatch(!toggleStopwatch);
   };
 
   return (

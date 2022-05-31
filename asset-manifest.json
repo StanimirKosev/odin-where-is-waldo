@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/odin-where-is-waldo/static/css/main.91427113.css",
+    "main.js": "/odin-where-is-waldo/static/js/main.db6aefd1.js",
+    "static/media/background.jpg": "/odin-where-is-waldo/static/media/background.771ff9c5c98db2e40b17.jpg",
+    "static/media/egor-klyuchnyk-s3.jpg": "/odin-where-is-waldo/static/media/egor-klyuchnyk-s3.c1f54110e56de968df3f.jpg",
+    "static/media/morty-cut.png": "/odin-where-is-waldo/static/media/morty-cut.09eef6741a25d060a395.png",
+    "static/media/tom-cutt.png": "/odin-where-is-waldo/static/media/tom-cutt.ead4c9dcdc67cf2fb174.png",
+    "static/media/waldo-cut.png": "/odin-where-is-waldo/static/media/waldo-cut.4c5e0b4740d32cccbeef.png",
+    "index.html": "/odin-where-is-waldo/index.html",
+    "main.91427113.css.map": "/odin-where-is-waldo/static/css/main.91427113.css.map",
+    "main.db6aefd1.js.map": "/odin-where-is-waldo/static/js/main.db6aefd1.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.91427113.css",
+    "static/js/main.db6aefd1.js"
+  ]
+}

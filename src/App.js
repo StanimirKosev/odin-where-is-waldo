@@ -4,7 +4,13 @@ import background from "./images/background.jpg";
 import { PopMenu } from "./components/PopMenu";
 import { Header } from "./components/Header";
 import { initializeApp } from "firebase/app";
-import { query, collection, getFirestore, getDocs } from "firebase/firestore";
+import { config } from "./firebase-config";
+import {
+  query,
+  collection,
+  getFirestore,
+  getDocs,
+} from "firebase/firestore/lite";
 
 function App() {
   const [showPopMenu, setShowPopMenu] = useState(false);
@@ -85,12 +91,4 @@ function App() {
 }
 
 export default App;
-
-initializeApp({
-  apiKey: "AIzaSyB05JPVGC3DS99c9JrrwuNRba9M9e7LYgI",
-  authDomain: "where-is-waldo-54ae0.firebaseapp.com",
-  projectId: "where-is-waldo-54ae0",
-  storageBucket: "where-is-waldo-54ae0.appspot.com",
-  messagingSenderId: "923487993900",
-  appId: "1:923487993900:web:f52d00b34dec8d07c19189",
-});
+initializeApp(config);

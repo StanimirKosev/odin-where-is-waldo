@@ -10,9 +10,9 @@ export const WelcomeMenu = ({ whenGameStart }) => {
       <div className="welcome-menu">
         <img src={backgroundS3} alt="welcome-img" />
         <div className="welcome-menu-content">
-          <div className="title-one">
+          <div className="title-one-welcome">
             Where's Waldo?
-            <div className="title-two">Cyberpunk edition</div>
+            <div className="title-two-welcome">Cyberpunk edition</div>
           </div>
           <div className="credits">
             <a href="https://www.artstation.com/chekavo">

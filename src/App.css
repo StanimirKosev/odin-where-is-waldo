@@ -18,7 +18,7 @@ body {
   color: #ccff00;
 }
 
-img {
+img[alt*="background-img"] {
   max-width: 100%;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
@@ -104,16 +104,28 @@ img {
   align-content: center;
 }
 
+.title-one-welcome,
 .title-one {
   display: grid;
   align-content: end;
   justify-items: center;
+  cursor: pointer;
 }
 
+.title-one-welcome {
+  cursor: default;
+}
+
+.title-two-welcome,
 .title-two {
   display: grid;
   align-content: start;
   text-decoration: overline solid 1px #ccff00;
+  cursor: pointer;
+}
+
+.title-two-welcome {
+  cursor: default;
 }
 
 .timer {
@@ -245,6 +257,7 @@ img[alt*="welcome-char"] {
   background-color: #310e68;
   background-image: linear-gradient(316deg, #310e68 0%, #5f0f40 74%);
   border: 1px solid #ccff00;
+  cursor: pointer;
 }
 
 .game-over-btn:hover,

@@ -31,9 +31,15 @@ export const Header = ({ mortyFound, waldoFound, tomFound }) => {
     setToggleStopwatch(!toggleStopwatch);
   };
 
+  const playAgain = () => {
+    window.location.reload();
+  };
+
   return (
     <div className="header">
-      <div className="title-one">Where's Waldo?</div>
+      <div className="title-one" onClick={playAgain}>
+        Where's Waldo?
+      </div>
       <div className="timer">
         <span>{("0" + Math.floor((time / 60000) % 60)).slice(-2)}:</span>
         <span>{("0" + Math.floor((time / 1000) % 60)).slice(-2)}:</span>
@@ -53,10 +59,16 @@ export const Header = ({ mortyFound, waldoFound, tomFound }) => {
           <div className="char-title">Tom</div>
         </div>
       </div>
-      <div className="title-two">Cyberpunk edition</div>
+      <div className="title-two" onClick={playAgain}>
+        Cyberpunk edition
+      </div>
       {showWelcomeMenu ? <WelcomeMenu whenGameStart={whenGameStart} /> : null}
       {mortyFound && waldoFound && tomFound ? (
-        <GameOver whenGameStops={whenGameStops} time={time} />
+        <GameOver
+          whenGameStops={whenGameStops}
+          time={time}
+          playAgain={playAgain}
+        />
       ) : null}
     </div>
   );

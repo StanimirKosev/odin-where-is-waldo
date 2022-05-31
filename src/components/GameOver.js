@@ -1,11 +1,8 @@
 import React from "react";
 
-export const GameOver = ({ whenGameStops, time }) => {
+export const GameOver = ({ whenGameStops, time, playAgain }) => {
   whenGameStops();
 
-  const playAgain = () => {
-    window.location.reload();
-  };
   return (
     <div className="overlay-endgame">
       <div className="end-game-menu">

@@ -2,11 +2,14 @@
 
 The Odin Project Curriculum - Full Stack JavaScript Path - JavaScript Section - Project Nº18
 
-Goal: Create a photo tagging app, where you have a picture with lots of stuff on it and a user must locate different characters.
+Goal: Create the “Where’s Waldo” game, use Firebase ( Cloud Firestore ) for the backend.
 
-## Technologies:
+## Demo Gif
 
-- React
-- Firebase - Cloud Firestore
+![project gif](./src/images/gif-for-readme.gif)
+
+## Demo Pic
+
+![project pic](./src/images/screenshot-for-readme.png)
 
 [Demo Link](https://stanimirkosev.github.io/odin-where-is-waldo/)

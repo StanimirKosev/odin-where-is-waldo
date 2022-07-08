@@ -3,14 +3,6 @@ import React, { useState } from "react";
 import background from "./images/background.jpg";
 import { PopMenu } from "./components/PopMenu";
 import { Header } from "./components/Header";
-import { initializeApp } from "firebase/app";
-import { config } from "./firebase-config";
-import {
-  query,
-  collection,
-  getFirestore,
-  getDocs,
-} from "firebase/firestore/lite";
 
 function App() {
   const [showPopMenu, setShowPopMenu] = useState(false);
@@ -35,28 +27,46 @@ function App() {
     setShowPopMenu(!popMenu);
   };
 
-  // on guessChar - check backend
-  const checkBackend = () => {
-    queryForDocuments();
+  const checkCoords = () => {
+    const coords = [
+      {
+        id: "morty",
+        Xmax: 675,
+        Xmin: 600,
+        Ymax: 5774,
+        Ymin: 5752,
+      },
+      {
+        id: "waldo",
+        Xmax: 1225,
+        Xmin: 1195,
+        Ymax: 12458,
+        Ymin: 12410,
+      },
+
+      {
+        id: "tom",
+        Xmax: 1309,
+        Xmin: 1255,
+        Ymax: 13220,
+        Ymin: 13152,
+      },
+    ];
+
+    coords.forEach((char) => checkGuess(char));
   };
 
-  async function queryForDocuments() {
-    const chars = query(collection(getFirestore(), "chars-coords"));
-    const querySnapshot = await getDocs(chars);
-    querySnapshot.forEach((snap) => checkGuess(snap));
-  }
-
-  function checkGuess(snap) {
+  function checkGuess(char) {
     if (
-      snap.data().Xmin < guessCoords.X &&
-      snap.data().Xmax > guessCoords.X &&
-      snap.data().Ymin < guessCoords.Y &&
-      snap.data().Ymax > guessCoords.Y &&
-      `${snap.id}` === guessChar
+      char.Xmin < guessCoords.X &&
+      char.Xmax > guessCoords.X &&
+      char.Ymin < guessCoords.Y &&
+      char.Ymax > guessCoords.Y &&
+      `${char.id}` === guessChar
     ) {
-      if (snap.id === "morty") setMortyFound("char-found");
-      if (snap.id === "waldo") setWaldoFound("char-found");
-      if (snap.id === "tom") setTomFound("char-found");
+      if (char.id === "morty") setMortyFound("char-found");
+      if (char.id === "waldo") setWaldoFound("char-found");
+      if (char.id === "tom") setTomFound("char-found");
     } else {
       setGuessChar();
     }
@@ -85,10 +95,9 @@ function App() {
           waldoFound={waldoFound}
         />
       ) : null}
-      {guessChar ? checkBackend() : null}
+      {guessChar ? checkCoords() : null}
     </div>
   );
 }
 
 export default App;
-initializeApp(config);
